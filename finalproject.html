@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discover Malta</title>
+    <style>
+      button {
+        background: radial-gradient(
+          circle at 22.4% 21.7%,
+          rgb(4, 189, 228) 0%,
+          rgb(2, 83, 185) 100.2%
+        );
+        border: 1.5px solid #006390;
+        border-radius: 30px;
+        box-shadow: 3px 5px 5px rgba(139, 192, 216, 0.73);
+        color: #ffffff;
+        display: block;
+        font-size: 15px;
+        margin: 0 auto 20px;
+        padding: 20px 30px;
+        transition: all 200ms ease-in-out;
+      }
+
+      button:hover {
+        background: linear-gradient(
+          178deg,
+          rgba(201, 234, 252, 0.51) 14.9%,
+          rgba(139, 192, 216, 0.73) 80%
+        );
+        color: #006390;
+        cursor: pointer;
+      }
+
+      h1 {
+        color: #0162ad;
+        font-family: "Kiwi Maru";
+        font-size: 38px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      h2 {
+        color: #003149;
+        font-family: "Kiwi Maru";
+        font-size: 28px;
+        font-weight: 100;
+        line-height: 30px;
+        text-align: center;
+        text-decoration: underline;
+        padding-bottom: 15px;
+      }
+
+      img {
+        border-radius: 5px;
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
+        border: 2px dotted #003149;
+      }
+
+      p {
+        color: #003149;
+        font-family: "Kiwi Maru";
+        padding: 20px;
+        text-align: justify;
+      }
+
+      .homework {
+        background: linear-gradient(
+          178deg,
+          rgba(201, 234, 252, 0.51) 14.9%,
+          rgba(139, 192, 216, 0.73) 80%
+        );
+        border-radius: 8px;
+        box-shadow: 4px 3px 3px rgba(139, 192, 216, 0.15);
+        margin: 20px auto;
+        padding: 20px;
+        width: 60%;
+      }
+
+      .signature {
+        font-family: "Source Code Pro";
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="homework">
+      <h1>🏝 Malta 🏝</h1>
+      <h2>Discover the Mediterranean's beautiful islands</h2>
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/006/358/original/valletta.jpg?1617439517"
+        width="450"
+      />
+      <p>
+        Megaliths, medieval dungeons and Calypso's Cave –
+        <strong>The Maltese Islands</strong> are positively <em>mythic</em>. The
+        narrow meandering streets of their towns and villages lead to the main
+        square, which is invariably dominated by the huge baroque church. As the
+        countryside is dotted with medieval towers, wayside chapels and the
+        oldest known human structures in the world, the Islands have rightly
+        been described as an open-air museum. The Maltese archipelago lies
+        virtually at the centre of the Mediterranean, 93 km south of Sicily and
+        288 km north of Africa. The archipelago consists of three islands:
+        Malta, Gozo and Comino with a total population of over 500,000
+        inhabitants occupying an area of 316 square kilometers.<br />
+        <strong>Malta</strong> is the largest island and the cultural,
+        commercial and administrative centre. <strong>Gozo</strong> is the
+        second largest island and is more rural, characterised by fishing,
+        tourism, crafts and agriculture. <strong>Comino</strong>, the smallest
+        of the trio, is largely uninhabited. With superbly sunny weather,
+        attractive beaches, a thriving nightlife and 7,000 years of intriguing
+        history, there is a great deal to see and do.<br />
+        <a href="https://www.visitmalta.com/en/about-malta" target="_blank">
+          Find out more
+        </a>
+      </p>
+      <button>Plan your trip!</button>
+      <hr />
+      <p class="signature">Coded by Julia Pflüger ☀️</p>
+      <script>
+        function updateHeading(newHeading) {
+          let goingToMalta = document.querySelector("h1");
+          goingToMalta.innerHTML = newHeading;
+        }
+
+        function askForInfo() {
+          let name = prompt("What is your first name?");
+          let month = prompt("In which month would you like to travel?");
+          alert("Thank you!");
+
+          let nameCapitalized = name.charAt(0).toUpperCase() + name.slice(1);
+          let monthCapitalized = month.charAt(0).toUpperCase() + month.slice(1);
+
+          if (name.length != 0 && month.length != 0) {
+            updateHeading(
+              `🏝 You're going to Malta in ${monthCapitalized}, ${nameCapitalized}! 🏝`
+            );
+          } else {
+            updateHeading(`🏝 Malta is waiting for you! 🏝`);
+          }
+        }
+
+        let planTripButton = document.querySelector("button");
+        planTripButton.addEventListener("click", askForInfo);
+      </script>
+    </div>
+  </body>
+</html>
